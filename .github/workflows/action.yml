@@ -1,12 +1,12 @@
-name: Hello World
+name: ZAP Baseline Scan
 
 on: push
 
 jobs:
-  helloworld:
+  zap:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World!"
-      - run: uname -a
-      - run: id
-      - run: env
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: 'https://juice-shop.herokuapp.com/' 
